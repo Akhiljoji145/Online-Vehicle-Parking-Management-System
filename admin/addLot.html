@@ -1,0 +1,46 @@
+<html>
+    <head>
+    	<title>Add Lot</title>
+    	<style>
+        .submit
+        {
+        	height:20px;
+        	width:245px;
+            background-color: black;
+            color:white;
+            font-size:14px;
+        }
+        label
+        {
+            font-size: 20px;
+        } 
+        .padding
+        {
+            padding-left:400px;
+        }
+    	</style>
+        <script>
+        var lot = document.getElementById("lot");
+        if($lot.value="")
+        {
+            alert("enter a lot code starting with AS")
+        }
+        </script>
+	</head>
+
+    <body>
+        
+            <form method="POST" action="../php/addLot.php">
+        <table align="center">
+            <tr>
+                <td>Lot code:</td>
+                <td><input type="text" name="lot_code"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input class="submit" type="submit" name="submit"></td>
+            </tr>
+        </table>
+    </form>
+    
+    </body>
+</html>

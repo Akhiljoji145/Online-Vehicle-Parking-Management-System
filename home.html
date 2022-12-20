@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            
+            .head
+            {
+                grid-area: header;
+                background-color:black;
+                border:1px solid black;
+                color:white;
+                height:120px;
+            
+            }
+            .main
+            {
+                grid-area: main;
+                border: 1px solid black;
+                height:520px;
+                
+            }
+            .grid
+            {
+                display: grid;
+                grid-template-areas: 'header header header header header header'
+                    'main main main main main main';
+                    
+            }
+            img 
+            {
+                float:left;
+            }
+            .mhead
+            {
+               
+            }
+            .logo
+            {
+                display:grid;
+                grid-template-areas: 'pic pic pic pic pic pic';
+            }
+            .pic
+            {
+                grid-area: pic;
+            }
+            .img
+            {
+               margin-left: 70px;
+            }
+            #img
+            {
+                padding-left:400px;
+            }
+          
+            
+            .box-submit
+            {
+                height:20px;
+                width:265px;
+            }
+            .border
+            {
+                
+                height:340px;
+                padding-top:100px;
+                border:0;
+				background-image: url("images/parkingslot1.jpg");
+				background-size:100% 150%;
+			    
+            }
+            td
+			{
+				color:#060303;
+				font-size:20px; 
+			}
+            marquee 
+			{
+				background-color:#1EA703;
+				color:white;
+			}
+        </style> 
+    </head>
+    <body>
+        <div class="grid">
+        <div class="head">
+            <img src="images/LOGO.png" height="120" width="120"/><h1 align="center">Online Vehicle Parking</h1><span ><h1  align="center">Management System</h1></span>
+        </div>
+        
+        <div class="main">
+            <marquee ><h3>NOTE:-IF YOU WANT TO PARK YOUR VEHICLE . YOU MUST BE A REGISTERED CUSTOMER . LINK FOR REGISTRATION:- <a class="a" href="user/user.html">REGISTER </a> AND LOGIN TO GET YOUR USER ID TO CONTINUE.</h3></marquee>
+            <div class="border">
+            <form method="POST" action="php/home.php">
+            <table align="center">
+                <tr>
+                <td>Email:</td>
+                <td><input type="text" name="email"></td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td><input type="password" name="pass" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input class="box-submit" type="submit" name="submit"></td>
+                </tr>
+            </table>
+            </form>
+        </div>
+        </div>
+        </div>
+    </body>
+</html>'

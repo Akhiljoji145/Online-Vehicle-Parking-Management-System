@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .header
+        {
+            grid-area: header;
+            border:1px solid black;
+            width:100%;
+            
+           
+        }
+        .grid
+        {
+            display:grid;
+            grid-template-areas: 'header header header header header header'
+                                 'menu main main main main main';
+        }
+        .main
+        {
+            grid-area: main;
+            border:1px solid black;
+            width:100%;
+            height:500px;
+            
+        }
+        .link
+        {
+            grid-area: menu;
+            border:1px solid black;
+            
+        }
+        hr
+        {
+            border:1px solid black; 
+        }
+        ul
+        {
+            padding: 0;
+            list-style-type: none;
+		}
+        li
+        {
+            font-size: 18px;
+			padding:10 10 10 10;
+			text-align:center;
+		}
+        nav
+		{
+			width:300px;	
+		}
+		hr
+		{
+			border:1px thin black;
+		}
+		a
+		{
+			text-decoration: none;
+		}
+			
+    </style>
+    </head>
+    <body>
+        <div class="grid">
+        <div class="header">
+            <h1>ADMIN</h1>
+        </div>
+        <div class="link">
+            
+                <ul>
+                <li><a href="addvehicle.php" target="frame3">Add Vehicle</a></li>
+                <hr>
+                <li><a href="addLot.html" target="frame3">Add Lot</a></li>
+                <hr>  
+                <li><a href="vehi_details.php" target="frame3">Vehicle Details</a></li>
+                <hr>   
+                <li><a href="transactiondetails.php" target="frame3">Transcation Details</a></li>
+                <hr>    
+                <li><a href="Report.php" target="frame3">Report</a></li>
+                <hr>  
+                </ul>
+            
+        </div>
+        <iframe class="main" name="frame3">
+            <p>hello</p>
+        </iframe>
+        </div>
+    </body>
+</html>
