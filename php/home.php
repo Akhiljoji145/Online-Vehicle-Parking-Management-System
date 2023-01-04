@@ -3,28 +3,22 @@ session_start();
 include('connection.php');
 if(isset($_POST['submit']))
   {
-    $emailcon=$_POST['email'];
-    $password=$_POST['pass'];
-    $sql="SELECT `user_id`,`username`,`email`, `password`, `id` FROM `users` WHERE email='$emailcon' AND password='$password'";
+    $vehi_no=$_POST['vehi_no']; 
+    $sql="SELECT `user_id`, `username` , `email`, `vehi_no`, `password` FROM `users` WHERE vehi_no='$vehi_no'";
     $query=mysqli_query($conn,$sql);
     $result=mysqli_fetch_array($query);
-    if($result>0 && $result['id']==1){
-	  
-      header("location:../admin/admin.html");
-    }
-
-    else if($result>0 && $result['id']==0){
+    if($result>0){
 		$_SESSION['email']=$result['email'];
         $_SESSION['user_id']=$result['user_id'];
+		$_SESSION['vehi_no']=$result['vehi_no'];
 		$_SESSION['username']=$result['username'];
-		
       header("location:../user/welcome.php");
 		
     }
 
     else
     {
-    echo "not successfully";
+    echo'<script>alert("login not successfull")</script>';
     }
     
     

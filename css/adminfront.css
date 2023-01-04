@@ -1,0 +1,48 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding:0;
+
+  }
+  li
+  {
+    padding-top:20px;
+    padding-bottom:10px;
+    padding-left: 20px;
+    float:left;
+    
+  }
+  nav
+  {
+    border:1px solid black;
+    width:1335px;
+    float:left;
+  }
+  a{
+    font-size:25px;
+  }
+  .a
+  {
+    border:1px solid black;
+  }
+  img
+  {
+    padding-bottom:10px;
+  }
+  .float-left
+  {
+    float:left;
+    padding-top:10px;
+    padding-left:5px;
+  }
+  .float-right
+  {
+    float:right;
+    
+  }
+  iframe{
+    width:1335px;
+    border:1px solid black;
+    border-top:0;
+    height:720px;
+  }

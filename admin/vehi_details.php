@@ -9,15 +9,16 @@ echo'
 <table border="1">
 <tr>
 
-<td>vehi_name</td>
-<td>vehi_type </td>
-<td>vehi_no</td>
-<td>lot_no</td> 
-<td>user_id</td>
-<td>contact_no</td>
-<td>time_arr</td>
-<td>date_arr</td>
-<td>status</td></tr>';
+<th>vehi_name</th>
+<th>vehi_type </th>
+<th>vehi_no</th>
+<th>lot_no</th> 
+<th>user_id</th>
+<th>contact_no</th>
+<th>time_arr</th>
+<th>date_arr</th>
+<th>status</th>
+<th>view</th></tr>';
 while($row=mysqli_fetch_row($query))
 {
 echo"<tr>
@@ -31,7 +32,7 @@ echo"<tr>
 <td>$row[7]</td>
 <td>$row[8]</td>
 <td>$row[9]</td>
- </tr>";
+<td><a href='transaction.html'><button>view</button></td></tr>";
 }
 }
 

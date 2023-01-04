@@ -34,8 +34,7 @@ if (strlen($_SESSION['email']==0 && $_SESSION['user_id']==0  )) {
 			  border:1px solid black;
 			  width:100%;
 			  background-color: black;
-		
-		  }
+      }
         ul {
     list-style-type: none;
     margin: 0;
@@ -93,15 +92,23 @@ if (strlen($_SESSION['email']==0 && $_SESSION['user_id']==0  )) {
   </head>
     <body>
       <div class="grid">
-		<div class="header"> 
-			<img src="../images/LOGO.png" height="100" width="100"/><h1>Hi,<?php echo $_SESSION['username']?></h1>
-			<a class="right" href="../php/logout.php">Logout</a>
+		<div class="header">
+    
+    <img src="../images/LOGO.png" height="100" width="100"/>
+    <table>
+    <tr>
+    <td><h1>Hi,<?php echo $_SESSION['username']?></h1></td>
+		<td><a class="right" href="../php/logout.php">Logout</a></td>
+    </tr>
+    </table>
 		</div>
 		<div class="menu">
         <ul>
           <li>User Id : <?php echo $_SESSION['user_id'] ?></li>
           <hr>
           <li><a href="viewvehicle.php" target="frame4">View Vehicle</a></li>
+          <hr>
+          <li><a href="../admin/addvehicle.php" target="frame4">PreBooking</a></li>
           <hr>
   </ul>
   </div>

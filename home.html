@@ -19,6 +19,9 @@
                 grid-area: main;
                 border: 1px solid black;
                 height:520px;
+                background-image: url("images/parkingslot1.jpg");
+                background-size:100% 150%;
+                
                 
             }
             .grid
@@ -66,9 +69,7 @@
                 height:340px;
                 padding-top:100px;
                 border:0;
-				background-image: url("images/parkingslot1.jpg");
-				background-size:100% 150%;
-			    
+				
             }
             td
 			{
@@ -79,30 +80,41 @@
 			{
 				background-color:#1EA703;
 				color:white;
+                height:30px;
+                font-size: 25px;
 			}
+            a
+            {
+                text-decoration: none;
+                color:black;
+                
+            }
+            button{
+                float: right;
+            }
         </style> 
     </head>
     <body>
         <div class="grid">
         <div class="head">
-            <img src="images/LOGO.png" height="120" width="120"/><h1 align="center">Online Vehicle Parking</h1><span ><h1  align="center">Management System</h1></span>
+            <img src="images/LOGO.png" height="120" width="120"/><h1 align="center">Online Vehicle Parking</h1><span ><h1  align="center">Management System</h1></span><nav>
+        
         </div>
         
         <div class="main">
-            <marquee ><h3>NOTE:-IF YOU WANT TO PARK YOUR VEHICLE . YOU MUST BE A REGISTERED CUSTOMER . LINK FOR REGISTRATION:- <a class="a" href="user/user.html">REGISTER </a> AND LOGIN TO GET YOUR USER ID TO CONTINUE.</h3></marquee>
+            <marquee>If You Want To Add Vehicle You Must Be A Registered User.</marquee>
             <div class="border">
             <form method="POST" action="php/home.php">
             <table align="center">
                 <tr>
-                <td>Email:</td>
-                <td><input type="text" name="email"></td>
-                </tr>
-                <tr>
-                    <td>Password:</td>
-                    <td><input type="password" name="pass" autocomplete="off"></td>
+                <td>Vehicle no:</td>
+                <td><input type="text" name="vehi_no"></td>
                 </tr>
                 <tr>
                     <td colspan="2"><input class="box-submit" type="submit" name="submit"></td>
+                    </tr>
+                    <tr>
+                    <td colspan="2"><button><a href="register.html">register</a></button></td>
                 </tr>
             </table>
             </form>
