@@ -4,7 +4,7 @@ include('connection.php');
 if(isset($_POST['submit']))
   {
     $vehi_no=$_POST['vehi_no']; 
-    $sql="SELECT `user_id`, `username` , `email`, `vehi_no`, `password` FROM `users` WHERE vehi_no='$vehi_no'";
+    $sql="SELECT `user_id`, `username` , `email`, `vehi_no` FROM `users` WHERE vehi_no='$vehi_no'";
     $query=mysqli_query($conn,$sql);
     $result=mysqli_fetch_array($query);
     if($result>0){

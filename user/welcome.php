@@ -108,7 +108,7 @@ if (strlen($_SESSION['email']==0 && $_SESSION['user_id']==0  )) {
           <hr>
           <li><a href="viewvehicle.php" target="frame4">View Vehicle</a></li>
           <hr>
-          <li><a href="../admin/addvehicle.php" target="frame4">PreBooking</a></li>
+          <li><a href="prebooking.php" target="frame4">PreBooking</a></li>
           <hr>
   </ul>
   </div>

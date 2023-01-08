@@ -28,6 +28,7 @@
             {
                 display: grid;
                 grid-template-areas: 'header header header header header header'
+                'link link link link link link'
                     'main main main main main main';
                     
             }
@@ -62,6 +63,8 @@
             {
                 height:20px;
                 width:265px;
+                color:white;
+                background-color: black;
             }
             .border
             {
@@ -92,6 +95,43 @@
             button{
                 float: right;
             }
+            .link
+            {
+                grid-area:link;
+                border:1px solid black;
+                height:40px;
+            }
+            .a
+            {
+                color:white;
+
+            }
+            ul 
+            {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                height:60px;
+            }
+            .left
+            {
+                display: block;
+                padding: 8px;
+                float:left;
+                font-size:20px; 
+            }
+            .right
+            {
+                display: block;
+                padding: 8px;
+                float:right;
+                font-size:20px;
+            }
+            a:hover
+            {
+                text-decoration:underline;
+            }
         </style> 
     </head>
     <body>
@@ -100,7 +140,15 @@
             <img src="images/LOGO.png" height="120" width="120"/><h1 align="center">Online Vehicle Parking</h1><span ><h1  align="center">Management System</h1></span><nav>
         
         </div>
-        
+        <div class="link">
+            <ul>
+                <li><a class="left" href="#home">Home</a></li>
+                <li><a class="left" href="#news">News</a></li>
+                <li><a class="left" href="#contact">Contact</a></li>
+                <li><a class="right" href="admin/adminlogin.html">Admin Login</a></li>
+              </ul>
+              
+        </div>
         <div class="main">
             <marquee>If You Want To Add Vehicle You Must Be A Registered User.</marquee>
             <div class="border">
