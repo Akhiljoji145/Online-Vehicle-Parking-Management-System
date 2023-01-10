@@ -1,18 +1,30 @@
 <html>
 <head>
 	<style>
+	.header
+    {
+            grid-area: header;
+            border:1px solid black;
+            width:100%;
+            height:100px;
+            background-color: black;
+            
+           
+    }
 	.main
 	{
 	grid-area: main;
 	border:1px solid black;
 	height:620px;
+	width:100%;
 	background-image: url("../images/parking1.jpg");
 	background-size:100% 120%;
 	}
 	.grid
     {
      display:grid;
-     grid-template-areas:'main main main main main main';
+     grid-template-areas:'header header header header header header'
+     'main main main main main main';
     }
     form
     {
@@ -25,9 +37,24 @@
     	color:white;
     	font-size: 20px;
     }
+    img
+        {
+            float: left;
+        }
+        h1
+        {
+            float: left;
+            color:white;
+            padding-left: 20px;
+        }
 	</style>
 </head>
 <body>
+	<div class="header">
+         <img src="../images/LOGO.png" height="100" width="100"/>
+         <h1>Admin Login</h1>
+         
+        </div>
 	<div class="grid">
 	<div class="main">
 	<form action="adminlogin.php" method="POST">

@@ -57,10 +57,7 @@ echo"<html>
         }
         echo'</select></td>
         </tr>
-        <tr>
-        <th><span>Customer id:</span></th>
-        <td><input type="int" name="id" required></td>
-        </tr>
+        
         <tr>
         <th><span>Contact no:</span></th>
         <td><input type="text" name="phno" required></td>
