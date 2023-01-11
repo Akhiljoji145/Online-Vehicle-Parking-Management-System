@@ -8,7 +8,7 @@ if (strlen($_SESSION['email']==0 && $_SESSION['user_id']==0)) {
 } 
 else{ 
 $id=$_SESSION['user_id'];
-$sql="SELECT users.username,vehicles.* FROM users , vehicles WHERE users.user_id='$id' AND vehicles.user_id='$id' AND status='IN'";
+$sql="SELECT users.vehi_no,users.user_id,vehicles.* FROM users , vehicles WHERE users.vehi_no=vehicles.vehi_no AND status='IN'";
 $result=mysqli_query($conn,$sql);
 
 if($result==TRUE)

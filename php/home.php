@@ -9,7 +9,7 @@ if(isset($_POST['submit']))
     $result=mysqli_fetch_array($query);
     if($result>0){
 		$_SESSION['email']=$result['email'];
-        $_SESSION['user_id']=$result['user_id'];
+    $_SESSION['user_id']=$result['user_id'];
 		$_SESSION['vehi_no']=$result['vehi_no'];
 		$_SESSION['username']=$result['username'];
       header("location:../user/welcome.php");

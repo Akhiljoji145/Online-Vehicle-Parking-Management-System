@@ -42,10 +42,7 @@ echo"<html>
         </select>
         </td>
         </tr>
-        <tr>
-        <th><span>Vehicle no:</span></th>
-        <td><input type='text' name='vehi_no' required></td>
-        </tr>
+        
         <tr><th><span>Lot no:<span></th>
         <td>
         <select name='lot_code' required>";
@@ -56,10 +53,6 @@ echo"<html>
          echo"</option>";
         }
         echo'</select></td>
-        </tr>
-        <tr>
-        <th><span>Customer id:</span></th>
-        <td><input type="int" name="id" required></td>
         </tr>
         <tr>
         <th><span>Contact no:</span></th>
