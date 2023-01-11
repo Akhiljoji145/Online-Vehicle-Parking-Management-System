@@ -3,7 +3,7 @@ session_start();
 include("connection.php");
 $vehi_name = $_POST['vehi_name'];
 $vehi_type=$_POST['vehi_type'];
-$vehi_no=$_POST['vehi_no'];
+$vehi_no=$_SESSION['vehi_no'];
 $lot_no=$_POST['lot_code'];
 
 $phno=$_POST['phno'];

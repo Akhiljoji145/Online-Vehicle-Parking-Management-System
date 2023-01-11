@@ -1,6 +1,6 @@
 <?php
 include('../php/connection.php');
-$sql="select  `vehi_name`, `vehi_type`, `vehi_no`, `lot_no`, `contact_no`, `time_arr`, `date_arr`, `status` from vehicles";
+$sql="SELECT * FROM vehicles WHERE status='IN'";
 $query=mysqli_query($conn,$sql);
 $result=mysqli_num_rows($query);
 if($result > 0)
@@ -17,6 +17,7 @@ echo'
 <th>time_arr</th>
 <th>date_arr</th>
 <th>status</th>
+</tr>
 ';
 while($row=mysqli_fetch_row($query))
 {
@@ -31,7 +32,7 @@ echo"<tr>
 <td>$row[7]</td>
 <td>$row[8]</td>
 
-<td><a href='transaction.html'><button>view</button></td></tr>";
+<td><a href='transactiondetails.html'><button>view</button></td></a></tr>";
 }
 }
 

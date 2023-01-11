@@ -8,7 +8,7 @@
             font-size: 20px;
         }
         form{
-            border:1px solid black;
+            
             width:100%;
         }
         .padding-left1
@@ -25,18 +25,30 @@
             height:30px;
             width: 200px;
         }
+        table
+        {
+            border:1px solid black;
+            height:100px;
+            width:700px;
+        }
+        input
+        {
+            height:20px;
+            width:100px;
+        }
     </style>
     <body>
         <form method="POST">
-        <br>
-        <span class="padding-left1">
-        <label>Search:</label>
-        <label class="padding-left">From:</label>
-        <span class="padding-left2"><input class="input"  type="date" name="fr_date"></span>
-        <label class="padding-left">To:</label>
-        <span class="padding-left2"><input class="input"  type="date" name="to_date"></span>
-        <span class="padding-left2"><input class="input"  type="submit" name="submit-search" value="Search"></span></span>
-        <br><br>
+        <table align="center">
+            <tr >
+                <td >search:</td>
+                <td >from:</td>
+                <td><input type="date" name="fr_date"></td>
+                <td>to:</td>
+                <td><input type="date" name="to_date"></td>
+                <td><input type="submit" name="submit-search"></td>
+            </tr>
+        </table>
         </form>
         <div class="search-container">
         <?php
@@ -53,7 +65,6 @@
         		echo"<table border='1'>
                 <tr>
                 <th>transactionid</th>
-                <th>user id</th>
                 <th>vehicle no</th>
                 <th>receipt no</th>
                 <th>time</th>
@@ -69,7 +80,7 @@
                  <td>$row[3]</td>
                  <td>$row[4]</td>
                  <td>$row[5]</td>
-                 <td>$row[6]</td>
+                 
                  </tr>";
                 }
                 echo"</table>";

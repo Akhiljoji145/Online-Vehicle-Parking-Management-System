@@ -1,7 +1,8 @@
 <?php
-include("connection.php");
+session_start();
+include("../php/connection.php");
 
-$vehi_no=$_POST['vehi_no'];
+$vehi_no=$_SESSION['vehi_no'];
 $rec_no=$_POST['rec_no'];
 $time=$_POST['time'];
 $date=$_POST['date'];

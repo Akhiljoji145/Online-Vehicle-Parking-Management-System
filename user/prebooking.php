@@ -26,7 +26,7 @@ echo"<html>
     </style>   
     </head>
     <body>
-        <form action='../php/addvehiclecheck.php' method='POST'>
+        <form action='../php/prebooking.php' method='POST'>
         <table align='center' border='0' height='400px' width='400px'>
         <tr>
         <th><span>vehicle name:<span></th>
