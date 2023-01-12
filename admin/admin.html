@@ -16,6 +16,7 @@
         {
             display:grid;
             grid-template-areas: 'header header header header header header'
+                                 'link link link link link link'
                                  'menu main main main main main';
         }
         .main
@@ -94,6 +95,62 @@
             text-decoration: underline;
             
         }
+        .right
+      {
+        grid-area:link;
+        border:1px solid black;
+        width:100%;
+      }
+      .ul 
+      {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        height:40px;
+        background-color:darkslategray;
+                
+        }
+        .left
+        {
+          display: block;
+          padding:10px;
+          float:left;
+          font-size:20px;
+          color:white; 
+        }
+        .left:hover
+            {
+                text-decoration:underline;
+                background-color: #1EA703;
+            }
+           .li{
+            display: inline;
+           }
+        .right1
+        {
+          display: block;
+          
+          float:right;
+          font-size:20px;
+          color:white;
+           
+        }
+        .logout
+        {
+            height:20px;
+            width:30px;
+            float:right;
+            padding:10px;
+            padding-right:30px;
+
+        }
+        .right1:hover
+            {
+                text-decoration:underline;
+                background-color: #1EA703;
+            }
+
     </style>
     </head>
     <body>
@@ -101,8 +158,16 @@
         <div class="header">
          <img src="../images/LOGO.png" height="100" width="100"/>
          <h1>Admin</h1>
-         <a class="a" href="../php/logout.php">Logout</a>
+         
         </div>
+        <div class="right">
+     <ul class="ul">
+        <li class="li"><a class="left" href="../home.html">Home</a></li>
+        <li class="li"><a class="left" href="#news">News</a></li>
+        <li class="li"><a class="left" href="#contact">Contact</a></li>
+        <li class="li"><a class="right1 logout" href="../php/logout.php">Logout</a></li>
+      </ul>
+    </div>
         <div class="link">
             
                 <ul>
@@ -120,7 +185,7 @@
             
         </div>
         <iframe class="main" name="frame3">
-            <p>hello</p>
+           
         </iframe>
         </div>
     </body>

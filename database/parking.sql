@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 11, 2023 at 03:07 AM
+-- Generation Time: Jan 12, 2023 at 03:20 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -49,7 +49,7 @@ INSERT INTO `admin` (`admin_id`, `ad_name`, `ad_password`) VALUES
 CREATE TABLE `lots` (
   `lot_id` int(11) NOT NULL,
   `lot_code` varchar(50) NOT NULL,
-  `user_id` int(11) NOT NULL,
+  `vehi_no` varchar(100) DEFAULT NULL,
   `lot_status` varchar(50) DEFAULT NULL,
   `type` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -58,8 +58,14 @@ CREATE TABLE `lots` (
 -- Dumping data for table `lots`
 --
 
-INSERT INTO `lots` (`lot_id`, `lot_code`, `user_id`, `lot_status`, `type`) VALUES
-(5, 'AS0001', 0, 'OUT', 'pre');
+INSERT INTO `lots` (`lot_id`, `lot_code`, `vehi_no`, `lot_status`, `type`) VALUES
+(5, 'AS0001', '', 'OUT', 'pre'),
+(6, 'AS0002', '', 'OUT', 'pre'),
+(7, 'AS0003', '', 'OUT', 'lot'),
+(8, 'AS0004', '', 'OUT', 'pre'),
+(9, 'AS0005', '', 'OUT', 'lot'),
+(10, 'AS0006', '', 'OUT', 'pre'),
+(11, 'AS0007', '', 'OUT', 'pre');
 
 -- --------------------------------------------------------
 
@@ -69,7 +75,6 @@ INSERT INTO `lots` (`lot_id`, `lot_code`, `user_id`, `lot_status`, `type`) VALUE
 
 CREATE TABLE `transaction` (
   `tran_id` int(50) NOT NULL,
-  `user_id` int(11) NOT NULL,
   `vehicle_no` varchar(50) NOT NULL,
   `receipt_no` varchar(50) NOT NULL,
   `time` time NOT NULL,
@@ -81,9 +86,14 @@ CREATE TABLE `transaction` (
 -- Dumping data for table `transaction`
 --
 
-INSERT INTO `transaction` (`tran_id`, `user_id`, `vehicle_no`, `receipt_no`, `time`, `date_of_trans`, `amount`) VALUES
-(1, 9, 'KL-05-W-8697', '', '06:43:00', '2022-11-19', 200),
-(2, 2, 'KL-05-AD-8657', '', '06:31:00', '2022-11-21', 200);
+INSERT INTO `transaction` (`tran_id`, `vehicle_no`, `receipt_no`, `time`, `date_of_trans`, `amount`) VALUES
+(1, 'KL-05-W-8697', '', '06:43:00', '2022-11-19', 200),
+(2, 'KL-05-AD-8657', '', '06:31:00', '2022-11-21', 200),
+(5, 'KL-05-AD-1234', '', '21:11:00', '2023-01-11', 50),
+(6, 'KL-05-AD-1234', '', '21:54:00', '2023-01-11', 50),
+(7, 'KL-05-W-1869', '', '19:16:00', '2023-01-12', 50),
+(8, 'KL-05-W-1869', '', '19:17:00', '2023-01-12', 50),
+(9, 'KL-05-AD-1234', '', '19:19:00', '2023-01-12', 50);
 
 -- --------------------------------------------------------
 
@@ -123,7 +133,6 @@ CREATE TABLE `vehicles` (
   `vehi_type` varchar(50) DEFAULT NULL,
   `vehi_no` varchar(50) DEFAULT NULL,
   `lot_no` varchar(50) DEFAULT NULL,
-  `user_id` int(11) NOT NULL,
   `contact_no` varchar(50) DEFAULT NULL,
   `time_arr` time DEFAULT NULL,
   `date_arr` date DEFAULT NULL,
@@ -134,9 +143,12 @@ CREATE TABLE `vehicles` (
 -- Dumping data for table `vehicles`
 --
 
-INSERT INTO `vehicles` (`vehi_id`, `vehi_name`, `vehi_type`, `vehi_no`, `lot_no`, `user_id`, `contact_no`, `time_arr`, `date_arr`, `status`) VALUES
-(4, 'honda shine', 'twowheeler', 'KL-05-W-8697', 'AS0001', 9, '947343468', '06:40:00', '2022-11-19', 'OUT'),
-(5, 'maruti 800', 'fourwheeler', 'KL-05-AD-8697', 'AS0001', 2, '9656743468', '06:22:00', '2022-11-21', 'OUT');
+INSERT INTO `vehicles` (`vehi_id`, `vehi_name`, `vehi_type`, `vehi_no`, `lot_no`, `contact_no`, `time_arr`, `date_arr`, `status`) VALUES
+(15, 'HONDA amaze', 'fourwheeler', 'KL-05-AD-1234', 'AS0003', '9497343468', '07:17:00', '2023-01-11', 'OUT'),
+(17, 'HONDA amaze', 'fourwheeler', 'KL-05-AD-1234', 'AS0006', '9497343468', '21:43:00', '2023-01-11', 'OUT'),
+(19, 'HONDA amaze', 'fourwheeler', 'KL-05-W-1869', 'AS0002', '9497343468', '19:15:00', '2023-01-12', 'OUT'),
+(20, 'HONDA amaze', 'fourwheeler', 'KL-05-W-1869', 'AS0002', '9497343468', '19:17:00', '2023-01-12', 'OUT'),
+(21, 'HONDA amaze', 'fourwheeler', 'KL-05-AD-1234', 'AS0005', '9497343468', '19:18:00', '2023-01-12', 'OUT');
 
 --
 -- Indexes for dumped tables
@@ -152,8 +164,7 @@ ALTER TABLE `admin`
 -- Indexes for table `lots`
 --
 ALTER TABLE `lots`
-  ADD PRIMARY KEY (`lot_id`),
-  ADD KEY `user_id` (`user_id`);
+  ADD PRIMARY KEY (`lot_id`);
 
 --
 -- Indexes for table `transaction`
@@ -171,8 +182,7 @@ ALTER TABLE `users`
 -- Indexes for table `vehicles`
 --
 ALTER TABLE `vehicles`
-  ADD PRIMARY KEY (`vehi_id`),
-  ADD KEY `user_id` (`user_id`);
+  ADD PRIMARY KEY (`vehi_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -182,13 +192,13 @@ ALTER TABLE `vehicles`
 -- AUTO_INCREMENT for table `lots`
 --
 ALTER TABLE `lots`
-  MODIFY `lot_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `lot_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
-  MODIFY `tran_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `tran_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -200,17 +210,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `vehicles`
 --
 ALTER TABLE `vehicles`
-  MODIFY `vehi_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `vehicles`
---
-ALTER TABLE `vehicles`
-  ADD CONSTRAINT `vehicles_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
+  MODIFY `vehi_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
