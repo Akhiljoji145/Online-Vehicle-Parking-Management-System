@@ -1,7 +1,7 @@
 <?php
 include("../php/connection.php");
 $sql1="select lot_code from lots where lot_status='OUT' AND  type='lot'";
-$result1=mysqli_query($conn,$sql1);
+$result=mysqli_query($conn,$sql1);
 
 echo"<html>
     <head>
@@ -49,11 +49,13 @@ echo"<html>
         <tr><th><span>Lot no:<span></th>
         <td>
         <select name='lot_code' required>";
-        while($row2=mysqli_fetch_assoc($result1))
+        while($row2=mysqli_fetch_assoc($result))
         {
-         echo"<option>";
-         print_r($row2['lot_code']);
-         echo"</option>";
+        echo"<option>";
+        print_r($row2['lot_code']);
+        echo"</option>";
+        
+        
         }
         echo'</select></td>
         </tr>
