@@ -1,6 +1,45 @@
 <html>
+<head>
+    <style type="text/css">
+        .grid
+        {
+            display: grid;
+            grid-template-areas: 'main main main main main main';
+
+        }
+        .main
+        {
+            grid-area: main;
+            height:600px;
+            border:1px solid black;
+            background-image: url('images/parking3.png');
+            background-size: 100% 150%;
+        }
+        table
+        {
+            padding-top:200px;
+            
+        }
+
+        td
+        {
+            padding:8 8;
+            color:whitesmoke;
+        }
+        .box-submit
+        {
+            height:20px;
+            width: 265px;
+            background-color: black;
+            color:white;
+        }
+    </style>
+    </head>
     <body>
         <form method="POST" action="register.php">
+        <div class="grid">
+        <div class="main">
+        
         <table align="center">
             <tr>
                 <td>username</td>
@@ -21,9 +60,12 @@
             </tr>
            
             <tr>
-                <td><input type="submit" name="submit"></td>
+                <td colspan="2"><input class="box-submit" type="submit" name="submit"></td>
             </tr>
-        </table>
+        
         </form>
+    </div>
+    </div>
+    </div>
     </body>
 </html>
