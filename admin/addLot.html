@@ -1,5 +1,6 @@
 <html>
     <head>
+        <script type="text/javascript" src="../php/addlot.js"></script>
     	<title>Add Lot</title>
     	<style>
         .submit
@@ -30,21 +31,22 @@
 
     <body>
         
-            <form method="POST" action="../php/addLot.php">
+            <form name="form" method="POST" action="../php/addLot.php">
         <table align="center">
             <tr>
                 <td>Lot code:</td>
-                <td><input type="text" name="lot_code"></td>
+                <td><input type="text" name="lot_code" id="lot_code"></td>
             </tr>
             <tr>
                 <td>lot type:</td>
-                <td><select name=lot_type>
+                <td><select name="lot_type" id="lot_type">
+                    <option value="NULL">select one</option>
                     <option value="lot">Lot</option>
                     <option value="pre">PreBooking</option>
                 </select>
             </tr>
             <tr>
-                <td colspan="2"><input class="submit" type="submit" name="submit"></td>
+                <td colspan="2"><input class="submit" type="submit" name="submit" onclick="return validate()"></td>
             </tr>
         </table>
     </form>

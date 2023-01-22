@@ -1,5 +1,6 @@
 <html>
 <head>
+    <script type="text/javascript" src="adminlogin.js"></script>
 	<style>
 	.header
     {
@@ -68,18 +69,18 @@
         </div>
 	<div class="grid">
 	<div class="main">
-	<form action="adminlogin.php" method="POST">
+	<form name="admin" action="adminlogin.php" method="POST">
 	<table align="center">
 		<tr>
 			<td>username:</td>
-			<td><input type="text" name="name"></td>
+			<td><input type="text" name="name" id="name"></td>
 		</tr>
         <tr>
         	<td>password:</td>
-        	<td><input type="password" name="pass"></td>
+        	<td><input type="password" name="pass" id="pass"></td>
         </tr>
         <tr>
-            <td colspan="2"><input class="box-submit" type="submit" name="submit"></td>
+            <td colspan="2"><input class="box-submit" type="submit" name="submit" onclick="return validate()"></td>
         </tr>
 	</table>
 </form>

@@ -65,7 +65,7 @@ while($row = mysqli_fetch_row($result))
     <td>$row[8]</td>
     <td>$row[9]</td>
     <td>$row[10]</td>
-    <td><a href='unbook.php'>unbook</a></td>
+    <td><a href='unbook.php'>unbook</a></td>";
     
 }
 echo"

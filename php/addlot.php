@@ -2,25 +2,30 @@
 include("connection.php");
 $lot_code=$_POST['lot_code'];
 $lot_type=$_POST['lot_type'];
-if($lot_code=="")
+error_reporting(0);
+$sql="select lot_code,type from lots where lot_code='$lot_code' and type='$lot_type'";
+$query=mysqli_query($conn,$sql);
+while($row=mysqli_fetch_assoc($query))
 {
-	echo '<script>alert("ENTER LOT CODE STARTING WITH AS")</script>';
+	$lot=$row['lot_code'];
+	$type=$row['type'];
 }
-else if(preg_match("/^AS00.*$/", $lot_code))
+if($lot_code!=$lot && $lot_type!=$type)
 {
-$sql="insert into lots values ('','$lot_code','','OUT','$lot_type')";
-$result=mysqli_query($conn,$sql);
-if($result==TRUE)
-{
-    echo'<script>alert("inserted successfully")</script>';
+	$sql1="insert into lots values ('','$lot_code','','OUT','$lot_type')";
+	if(preg_match("/^AS00.*$/", $lot_code))
+	{
+		$query1=mysqli_query($conn,$sql1);
+		echo'<script>alert("inserted successfully")</script>';
+
+	}
+	else 
+	{
+		echo'<script>alert("Enter code starting with AS00")</script>';
+	}
 }
 else
 {
-echo'<script>alert("not inserted")</script>';
-}
-}
-else
-{
-echo'<script>alert("ENTER LOT CODE STARTING WITH AS")</script>';	
+ echo'<script>alert("already inserted")</script>';	
 }
 ?>
