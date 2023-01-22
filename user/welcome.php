@@ -140,7 +140,7 @@ if (strlen($_SESSION['email']==0 && $_SESSION['user_id']==0  )) {
       <div class="grid">
 		<div class="header">
     <img src="../images/LOGO.png" height="100" width="100"/>
-    <h1>Hi,<?php echo $_SESSION['username']?></h1>
+    <h1>User</h1>
     </div>
     <div class="link">
      <ul class="ul">
@@ -152,8 +152,8 @@ if (strlen($_SESSION['email']==0 && $_SESSION['user_id']==0  )) {
     </div>
 		<div class="menu">
         <ul>
-          <li>User Id : <?php echo $_SESSION['user_id'] ?></li>
-          <hr>
+         
+          
           <li><a href="viewvehicle.php" target="frame4">View Vehicle</a></li>
           <hr>
           <li><a href="prebooking.php" target="frame4">PreBooking</a></li>

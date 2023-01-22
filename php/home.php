@@ -13,9 +13,7 @@ if(isset($_POST['submit']))
 		$_SESSION['vehi_no']=$result['vehi_no'];
 		$_SESSION['username']=$result['username'];
       header("location:../user/welcome.php");
-		
     }
-
     else
     {
     echo'<script>alert("login not successfull")</script>';

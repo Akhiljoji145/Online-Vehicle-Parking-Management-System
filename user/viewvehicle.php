@@ -48,7 +48,7 @@ border-right:white;
 <th>date of arr</th>
 <th>status</th>
 <th>unbook</th>
-<th>Pay</th>
+
 </tr>
 ";
 while($row = mysqli_fetch_row($result))
@@ -66,7 +66,7 @@ while($row = mysqli_fetch_row($result))
     <td>$row[9]</td>
     <td>$row[10]</td>
     <td><a href='unbook.php'>unbook</a></td>
-    <td><a href='userpay.html'>Pay</a></td>";
+    
 }
 echo"
 </tr>
