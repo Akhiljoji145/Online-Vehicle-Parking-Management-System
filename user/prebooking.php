@@ -1,6 +1,6 @@
 <?php
 include("../php/connection.php");
-$sql1="select lot_code from lots where lot_status='OUT' AND type='pre'";
+$sql1="select lot_code from lots where lot_status='OUT'";
 $result1=mysqli_query($conn,$sql1);
 
 echo"<html>
