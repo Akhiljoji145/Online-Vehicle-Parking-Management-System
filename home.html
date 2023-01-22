@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
     <head>
+        <script type="text/javascript" src="guestuser/guest.js"></script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
@@ -166,14 +167,14 @@
         <div class="main">
             
             <div class="border">
-            <form method="POST" action="php/Home.php">
+            <form name="form" method="POST" action="php/Home.php">
             <table align="center">
                 <tr>
                 <td>Vehicle no:</td>
                 <td><input type="text" name="vehi_no"></td>
                 </tr>
                 <tr>
-                    <td colspan="2"><input class="box-submit" type="submit" name="submit"></td>
+                    <td colspan="2"><input class="box-submit" type="submit" name="submit" onclick="return validate()"></td>
                     </tr>
                     <tr>
                     <td colspan="2"><button><a href="Register.html">register</a></button></td>
