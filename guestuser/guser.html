@@ -1,5 +1,6 @@
 <html>
 <head>
+	<script type="text/javascript" src="guest.js"></script>
 	<style type="text/css">
 	.grid
 	{
@@ -107,15 +108,15 @@ td{
 		</div>
 		<div class="main">
 			
-			<form action="guser.php" method="POST">
+			<form name="form" action="guser.php" method="POST">
 			<div class="div">
 			<table align="center">
 				<tr>
 					<td>Vehicle no:</td>
-					<td><input type="text" name="vehi_no"></td>
+					<td><input type="text" name="vehi_no" id="vehi_no"></td>
 				</tr>
 				<tr>
-					<td colspan="2"><input class="box-submit" type="submit" name="submit"></td>
+					<td colspan="2"><input class="box-submit" type="submit" name="submit" onclick="return validate()"></td>
 
 				</tr>
 			</table>
