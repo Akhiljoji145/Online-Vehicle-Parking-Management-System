@@ -1,0 +1,127 @@
+<html>
+<head>
+<style type="text/css">
+.grid
+{
+	display: grid;
+	gird-template-areas:'header header header header header header'
+	'link link link link link link'
+	'view view main main main main';
+}
+.head
+{
+	grid-area:header;
+	border:1px solid black;
+	height:100px;
+	background-color: black;
+}
+.link
+{
+    grid-area:link;
+    border:1px solid black;
+    height:60px;
+}
+.main
+{
+	grid-area:main;
+	border:1px solid black;
+	height:700px;
+	width:787px;
+
+}
+.view
+{
+	grid-area:view;
+	border:1px solid black;
+	width:200px;
+	height:700px;
+	float:left;
+
+}	
+ul 
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height:60px;
+    background-color:darkslategray;
+                
+}
+.left
+{
+    display: block;
+    padding-top: 20px;
+    padding-bottom:20px;
+    padding-left: 8px;
+    padding-right: 8px;
+    float:left;
+    font-size:20px;
+    color:white; 
+}
+.right1:hover,.left:hover
+{
+    text-decoration:underline;
+    background-color: #1EA703;
+}
+.right1
+{
+    display: block;
+    padding-top: 20px;
+    padding-bottom:20px;
+    padding-left: 8px;
+    padding-right: 8px;
+    float:right;
+    font-size:20px;
+    color:white;
+           
+}
+img 
+{
+    float:left;
+    height:100px;
+    width: 100px;
+}
+h1
+{
+	color:white;
+	font-size: 25px;
+}
+.lin
+{
+   font-size: 22px;
+   color:blue;  
+   padding-left:22%;
+   text-decoration: none;
+}
+.lin:hover
+{
+	text-decoration: underline;
+}
+hr{
+	border:1px solid black;
+}
+</style>
+</head>
+<body>
+	<div class="head">
+		<img src="../images/LOGO.png" height="120" width="120"/><h1 align="center">Online Vehicle Parking</h1><span ><h1  align="center">Management System</h1></span>
+	</div>
+	<div class="link">
+		<ul>
+            <li><a class="left" href="../home.html">Home</a></li>
+            <li><a class="left" href="#news">News</a></li>
+            <li><a class="left" href="#contact">Contact</a></li>
+            <li class="li"><a class="right1 logout" href="../php/logout.php">Logout</a></li>
+        </ul>
+	</div>
+	<div class="view"><br>
+		<a class="lin" href="guser2.php" target="fra1">View Vehicle</a>
+		<hr>
+	</div>
+	<iframe name="fra1" class="main">
+
+	</iframe>
+	
+</body>
+</html>

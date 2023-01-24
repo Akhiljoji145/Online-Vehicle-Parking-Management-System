@@ -14,12 +14,26 @@ if(isset($_POST['submit']))
 		$_SESSION['username']=$result['username'];
       header("location:../user/welcome.php");
     }
+    elseif (!$result>0) 
+    {
+       
+       $sql1="SELECT * FROM  vehicles WHERE vehi_no='$vehi_no'";
+       $query1=mysqli_query($conn,$sql1);
+       $result1=mysqli_fetch_assoc($query1);
+       $result2=mysqli_num_rows($query1);
+       if($result2>0)
+       {
+         $_SESSION['vehi_no']=$result1['vehi_no'];
+         header("location:../guestuser/gwelcome.html");
+        }
+        else
+        {
+
+        }
+    }
     else
     {
     echo'<script>alert("login not successfull")</script>';
     }
-    
-    
-    
-} 
+    } 
 ?>
