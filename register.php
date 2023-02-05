@@ -11,7 +11,7 @@ if(!$result>0)
 {
 	$sql="insert into users values('','$username','$age','$email','$vehi_no')";
     $query=mysqli_query($conn,$sql);
-	echo'<script>alert("registered successfully")</script>';
+	echo'<script>alert("registered successfully");window.location.href="home.html"</script>';
 }
 else
 {
