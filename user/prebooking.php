@@ -1,11 +1,25 @@
 <?php
+session_start();
 include("../php/connection.php");
-$sql1="select lot_code from lots where lot_status='OUT'";
-$result1=mysqli_query($conn,$sql1);
-
+$vehi_no=$_SESSION['vehi_no'];
+$sql="select * from pre_lot where vehi_no='$vehi_no'";
+$query=mysqli_query($conn,$sql);
+$result=mysqli_num_rows($query);
+if(!$result>0)
+{
+ $sql1="select lot_code from pre_lot where lot_status='OUT'";
+ $query1=mysqli_query($conn,$sql1);
+ $result1=mysqli_num_rows($query1);
+if($result1>0)
+{
 echo"<html>
     <head>
     <style>
+    table
+    {
+      background-color:#01658a;
+      width:300px;
+    }
     tr
     {
      padding:10 40;
@@ -17,12 +31,14 @@ echo"<html>
    th
    {
    width:116px;
+   color:white;
    }
    .submit
    {
    height:20px;
    width:300px;
    }
+
     </style>   
     </head>
     <body>
@@ -46,7 +62,7 @@ echo"<html>
         <tr><th><span>Lot no:<span></th>
         <td>
         <select name='lot_code' required>";
-        while($row2=mysqli_fetch_assoc($result1))
+        while($row2=mysqli_fetch_assoc($query1))
         {
          echo"<option>";
          print_r($row2['lot_code']);
@@ -73,4 +89,13 @@ echo"<html>
    
     </body>
 </html>';
+}
+else
+{
+    echo "<h4 style='color:white;'>No Empty Lots<h4>";
+}
+}
+else
+echo"the vehicle already in a lot";
+
 ?>

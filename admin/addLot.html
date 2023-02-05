@@ -1,3 +1,4 @@
+
 <html>
     <head>
         <script type="text/javascript" src="../php/addlot.js"></script>
@@ -19,6 +20,14 @@
         {
             padding-left:400px;
         }
+        table
+        {
+            height:100px;
+            width:200px;
+            border:1px solid black;
+            background-color:#348ff7;
+            
+        } 
     	</style>
         <script>
         var lot = document.getElementById("lot");
@@ -31,11 +40,19 @@
 
     <body>
         
-            <form name="form" method="POST" action="../php/addLot.php">
-        <table align="center">
+        <form name="form" method="POST" action="../php/addLot.php">
+        <table align="center" >
             <tr>
                 <td>Lot code:</td>
                 <td><input type="text" name="lot_code" id="lot_code"></td>
+            </tr>
+             <tr>
+                <td>lot_type</td>
+                <td><select name="type">
+                    <option value="lot">lot</option>
+                    <option value="pre">pre_booking</option>
+                </select>
+                </td>
             </tr>
             <tr>
                 <td colspan="2"><input class="submit" type="submit" name="submit" onclick="return validate()"></td>

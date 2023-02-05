@@ -2,7 +2,6 @@
 session_start();
 
 include('../php/connection.php');
-
 if (strlen($_SESSION['email']==0 && $_SESSION['user_id']==0 && $_SESSION['vehi_no']==0)) {
     header('location:../user/siginform.php');
 } 
@@ -21,7 +20,7 @@ echo"
 table
 {
 border-collapse:collapse;
-border:1px solid black
+border:1px solid black;
 }
 th
 {
@@ -32,7 +31,11 @@ color:white;
 {
 border-right:white;
 }
-
+td
+{
+    background-color:white;
+    color:black;
+}
 </style>
 </head>
 <body>
@@ -75,7 +78,7 @@ echo"
 </html>";
 }
 else {
-echo"NO";
+echo"NO VEHICLES";
 }
 }
 ?>

@@ -1,15 +1,12 @@
 <?php
 include("connection.php");
 $lot_code=$_POST['lot_code'];
-error_reporting(0);
-$sql="select lot_code from lots where lot_code='$lot_code'";
+$sql="select lots.lot_code,pre_lot.lot_code from lots,pre_lot where lots.lot_code=pre_lot.lot_code";
 $query=mysqli_query($conn,$sql);
-while($row=mysqli_fetch_assoc($query))
+$result=mysqli_num_rows($query);
+if($result==0)
 {
-	$lot=$row['lot_code'];
-	
-}
-if($lot_code!=$lot && $lot_type="pre")
+if($lot_code=="lot")
 {
 	$sql1="insert into lots values ('','$lot_code','','OUT')";
 	if(preg_match("/^AS00.*$/", $lot_code))
@@ -25,6 +22,21 @@ if($lot_code!=$lot && $lot_type="pre")
 }
 else
 {
- echo'<script>alert("already inserted")</script>';	
+	$sql2="insert into pre_lot values ('','$lot_code','','OUT')";
+	if(preg_match("/^AS00.*$/", $lot_code))
+	{
+		$query1=mysqli_query($conn,$sql2);
+		echo'<script>alert("inserted successfully")</script>';
+
+	}
+	else 
+	{
+		echo'<script>alert("Enter code starting with AS00")</script>';
+	}
+}
+}
+else
+{
+   echo'<script>alert("already inserted")</script>';
 }
 ?>

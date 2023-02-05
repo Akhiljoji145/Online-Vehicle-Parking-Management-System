@@ -22,6 +22,17 @@ echo"<html>
    {
    height:20px;
    width:300px;
+   background-color:black;
+   color:white;
+   }
+   table
+   {
+    background-color:#348ff7;
+    width:250px;
+   }
+   th
+   {
+    color:white;
    }
     </style>   
     </head>

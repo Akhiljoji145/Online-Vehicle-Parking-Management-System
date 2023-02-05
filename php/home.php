@@ -12,7 +12,7 @@ if(isset($_POST['submit']))
     $_SESSION['user_id']=$result['user_id'];
 		$_SESSION['vehi_no']=$result['vehi_no'];
 		$_SESSION['username']=$result['username'];
-      header("location:../user/welcome.php");
+      header("location:../user/welcome1.php");
     }
     elseif (!$result>0) 
     {
@@ -24,7 +24,7 @@ if(isset($_POST['submit']))
        if($result2>0)
        {
          $_SESSION['vehi_no']=$result1['vehi_no'];
-         header("location:../guestuser/gwelcome.html");
+         header("location:../guestuser/guewelcome.html");
         }
         else
         {

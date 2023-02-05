@@ -6,7 +6,30 @@ $result=mysqli_num_rows($query);
 if($result > 0)
 {
 echo'
-<table border="1">
+<html>
+<head>
+<style>
+table
+{
+	border-collapse:collapse;
+	border:1px solid black;
+	background-color:#01658a;
+	
+}
+th
+{
+	background-color:black;
+	border-right:1px solid white;
+	color:white;
+}
+td{
+	background-color:white;
+	color:black;
+
+}
+</style>
+</head>
+<table border="1" align="center">
 <tr>
 
 <th>vehi_name</th>
@@ -17,6 +40,7 @@ echo'
 <th>time_arr</th>
 <th>date_arr</th>
 <th>status</th>
+<th>Pay</th>
 </tr>
 ';
 while($row=mysqli_fetch_row($query))

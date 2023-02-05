@@ -23,7 +23,11 @@ if($result1>0)
 	    	color:white;
 	    	border-right:white;
 	    }
-
+        .tr
+        {
+        	background-color:white;
+        	color:black;
+        }
 	    </style>
 	    </head>
 		<table align='center' border='1'>
@@ -39,7 +43,7 @@ if($result1>0)
 		</tr>";
 		while($row=mysqli_fetch_array($query))
 	{
-        echo"<tr>
+        echo"<tr class='tr'>
         
         <td>$row[1]</td>
         <td>$row[2]</td>

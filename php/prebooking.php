@@ -14,16 +14,16 @@ VALUES ('','$vehi_name','$vehi_type','$vehi_no','$lot_no','$phno','$arrtim','$ar
 $query=mysqli_query($conn,$sql);
 if($query==TRUE)
 {
-    echo"inserted successfully";
-$sql1="UPDATE `lots` SET `lot_status`='IN',vehi_no='$vehi_no' WHERE lot_code='$lot_no'";
+    echo"<p style='color:white'>inserted successfully</p>";
+$sql1="UPDATE `pre_lot` SET `lot_status`='IN',vehi_no='$vehi_no' WHERE lot_code='$lot_no'";
 $query1=mysqli_query($conn,$sql1);
 if($query1==TRUE)
 {
-    echo"updated successfully";
+    echo"<p style='color:white'>updated successfully<p>";
 }
 else
-echo"not updated";
+echo"<p style='color:white'>not updated</p>";
 }
 else
-echo"not inserted successfully";
+echo"<p style='color:white'>not inserted successfully";
 ?>

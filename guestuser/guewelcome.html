@@ -1,0 +1,143 @@
+<html>
+<head>
+<style type="text/css">
+.grid
+{
+    display:grid;
+    grid-template-areas:'header header header header header header'
+    'link link link link link link'
+    'left main main main main main';
+}
+.head
+{
+    grid-area:header;
+    display: flex;
+    border:1px solid black;
+    background-color: black;
+    width:100%;
+}
+.link
+{
+    grid-area:link;
+    border:1px solid black;
+    width:100%;
+
+    
+}
+.view
+{
+    grid-area:left;
+    border:1px solid black;
+    height:600px;
+    background-color: #fffb80;
+}
+.view li
+{
+    text-align:center;
+}
+.view a
+{
+    text-align: center;
+}
+.main
+{
+    grid-area:main;
+    border:1px solid black;
+    height:600px;
+    width:100%;
+
+}
+ul 
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height:60px;
+    background-color:darkslategray;
+   
+                
+}
+li
+{
+    float:left;
+} 
+      
+img 
+{
+    float:left;
+    height:100px;
+    width: 100px;
+}
+h1
+{
+    color:white;
+    font-size: 25px;
+    padding-left: 20px;
+}
+.a
+{
+    color:white;
+    text-decoration: none;
+    display:block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.a:hover
+{
+    text-decoration: underline;
+    background-color: green;
+}
+hr
+{
+    border:1px solid black;
+}
+.lin
+{
+   color:blue;
+   text-align: center;
+   font-size: 20px;
+   text-decoration: none; 
+}
+.lin:hover
+{
+    color:red;
+    text-decoration: underline;
+}
+.padding
+{
+    padding-left: 691px;
+}
+.iframe {
+   background-image: url('../images/background1.jpg');
+   background-size: 100% 100%;
+}
+
+</style>
+</head>
+<body>
+    <div class="grid">
+        <div class="head">
+            <img src="../images/logo1.jpg" height="120" width="120"><h1>Guest User</h1>
+        </div>
+        <div class="link">
+        <ul>
+            <li><a class="a" href="../home.html">Home</a></li>
+            <li><a class="a" href="#">About Us</a></li>
+            <li><a class="a" href="#">Contact Us</a></li>
+            <li class="padding"><a class="a" href="../php/logout.php">Logout</a></li>
+        </ul>
+        </div>
+        <div class="view">
+            <br>
+            <a class="lin" href="guser2.php" target="fra">View Vehicle</a>
+            <hr>
+        </div>
+
+        <iframe name="fra" class="main iframe">
+        </iframe>
+    </div>
+</body>
+</html>

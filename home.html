@@ -22,6 +22,7 @@
                 height:520px;
                 background-image: url("images/parkingslot1.jpg");
                 background-size:100% 150%;
+                width:100%;
                 
                 
             }
@@ -30,7 +31,7 @@
                 display: grid;
                 grid-template-areas: 'header header header header header header'
                 'link link link link link link'
-                    'main main main main main main';
+                'main main main main main main';
                     
             }
             img 
@@ -145,20 +146,22 @@
                 text-decoration:underline;
                 background-color: #1EA703;
             }
-            
+            .padding{
+                padding-top: 150px;
+            }
         </style> 
     </head>
     <body>
         <div class="grid">
         <div class="head">
-            <img src="images/LOGO.png" height="120" width="120"/><h1 align="center">Online Vehicle Parking</h1><span ><h1  align="center">Management System</h1></span><nav>
+            <img src="images/logo1.jpg" height="120" width="120"/><h1 align="center">Online Vehicle Parking</h1><span ><h1  align="center">Management System</h1></span><nav>
         
         </div>
         <div class="link">
             <ul>
-                <li><a class="left" href="#home">Home</a></li>
-                <li><a class="left" href="#news">News</a></li>
-                <li><a class="left" href="#contact">Contact</a></li>
+                <li><a class="left" href="Home.html">Home</a></li>
+                <li><a class="left" href="#About">About Us</a></li>
+                <li><a class="left" href="">Contact</a></li>
                 
                 <li><a class="right" href="admin/adminlogin.html">Admin Login</a></li>
                 
@@ -168,7 +171,7 @@
         </div>
         <div class="main">
             <marquee>If You Want To Prebook A Lot Your Vehicle Must Be Registered.</marquee>
-            <div class="border">
+            <div class="padding">
             <form name="form" method="POST" action="php/Home.php">
             <table align="center">
                 <tr>
@@ -179,7 +182,7 @@
                     <td colspan="2"><input class="box-submit" type="submit" name="submit" onclick="return validate()"></td>
                     </tr>
                     <tr>
-                    <td colspan="2"><button><a href="Register.html">register</a></button></td>
+                    <td colspan="2"><button><a href="Reg.html">register</a></button></td>
                 </tr>
             </table>
             </form>
