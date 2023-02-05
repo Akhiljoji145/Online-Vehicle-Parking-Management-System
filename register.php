@@ -7,7 +7,7 @@ $vehi_no=$_POST['vehi_no'];
 $sql1="select * from users where vehi_no='$vehi_no'";
 $query1=mysqli_query($conn,$sql1);
 $result=mysqli_num_rows($query1);
-if($result<0)
+if(!$result>0)
 {
 	$sql="insert into users values('','$username','$age','$email','$vehi_no')";
     $query=mysqli_query($conn,$sql);
@@ -15,7 +15,7 @@ if($result<0)
 }
 else
 {
-    echo '<script>alert("already registered"); window.location.href="register.html"</script>';
+    echo '<script>alert("already registered"); window.location.href="Reg.html"</script>';
 }
 
 ?>
