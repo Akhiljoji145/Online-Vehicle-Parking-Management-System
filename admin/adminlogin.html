@@ -12,6 +12,13 @@
             
            
     }
+    .link
+    {
+        grid-area:link;
+        border:1px solid black;
+        width:100%;
+        height: 40px;
+    }
 	.main
 	{
 	grid-area: main;
@@ -25,6 +32,7 @@
     {
      display:grid;
      grid-template-areas:'header header header header header header'
+     'link link link link link link'
      'main main main main main main';
     }
     form
@@ -58,16 +66,49 @@
         {
             background-color: darkgreen;
         }
+        ul
+        {
+            list-style-type: none;
+            margin:0;
+            padding:0;
+            background-color: green;
+        }
+        li
+        {
+            display: inline-block;
+            padding:11 8 11 8;
 
+        }
+        li a{
+            color:white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        li a:hover
+        {
+            text-decoration: underline;
+        }
+        li:hover
+        {
+            background-color: darkgreen;
+            
+        }
 	</style>
 </head>
 <body>
+    <div class="grid">
 	<div class="header">
          <img src="../images/logo1.jpg" height="100" width="100"/>
          <h1>Admin Login</h1>
          
-        </div>
-	<div class="grid">
+    </div>
+	<div class="link">
+        <ul>
+            <li><a href="../home.html">Home</a></li>
+            <li><a href="#About">About Us</a></li>
+            <li><a href="#Contact">Contact Us</a></li>
+        </ul>
+    </div>
 	<div class="main">
 	<form name="admin" action="adminlogin.php" method="POST">
 	<table align="center">
