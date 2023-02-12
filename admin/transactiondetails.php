@@ -22,11 +22,12 @@ td
     color:black;
 }
 </style>
+</head>
+<body>
 <table border='1' align='center'>
 <tr>
 <th>transactionid</th>
 <th>vehicle no</th>
-<th>receipt no</th>
 <th>time</th>
 <th>date of trans</th>
 <th>amount</th>
@@ -40,9 +41,11 @@ while($row=mysqli_fetch_row($result))
     <td>$row[2]</td>
     <td>$row[3]</td>
     <td>$row[4]</td>
-    <td>$row[5]</td>
-    </tr>
-    </table>";
+    </tr>";
+   
 }
+ echo"</table>
+    </body>
+    </html>";
 ?>
 

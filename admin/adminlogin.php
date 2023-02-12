@@ -7,6 +7,10 @@ $query=mysqli_query($conn,$sql);
 $result=mysqli_fetch_array($query);
 if($result>0)
 {
-	header("location:admin.html?login successfully");
+	header("location:admin.html");
+}
+else
+{
+echo'<script>alert("login not successfully");window.location.href="adminlogin.html"</script>';
 }
 ?>
