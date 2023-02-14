@@ -47,12 +47,12 @@ elseif($lot_type=='lot')
 }
 else
 {
-	echo'<script>alert("already inserted")</script>';
+	echo'<script>alert("already inserted");</script>';
 }
 }
 else
 {
-	echo'<script>alert("not inserted successfully")</script>';
+	echo'<script>alert("not inserted successfully"); window.location.href="../admin/addloT.html</script>';
 }
 
 ?>

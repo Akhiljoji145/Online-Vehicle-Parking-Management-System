@@ -54,6 +54,7 @@ td
 
 </tr>
 ";
+
 while($row = mysqli_fetch_row($result))
 {
     echo"<tr>
@@ -81,4 +82,5 @@ else {
 echo"NO VEHICLES";
 }
 }
+
 ?>

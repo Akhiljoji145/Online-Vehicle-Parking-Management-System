@@ -1,10 +1,12 @@
 <?php
+session_start();
 include('../php/connection.php');
 $sql="SELECT * FROM vehicles WHERE status='IN'";
 $query=mysqli_query($conn,$sql);
 $result=mysqli_num_rows($query);
 if($result > 0)
 {
+
 echo'
 <html>
 <head>
@@ -38,15 +40,14 @@ td{
 <th>lot_no</th> 
 <th>contact_no</th>
 <th>time_arr</th>
-<th>date_arr</th>
 <th>status</th>
+<th>type</th>
 <th>Pay</th>
 </tr>
 ';
 while($row=mysqli_fetch_row($query))
 {
 echo"<tr>
-
 <td>$row[1]</td>
 <td>$row[2]</td>
 <td>$row[3]</td>
@@ -55,8 +56,10 @@ echo"<tr>
 <td>$row[6]</td>
 <td>$row[7]</td>
 <td>$row[8]</td>
-
-<td><a href='transactiondetails.html'><button>view</button></td></a></tr>";
+<td><a href='transactionDetails.html'><button>view</button></td></a>
+</tr>";
+$_SESSION['vehi_no'] = $row[3];
+$_SESSION['type']=$row[8];
 }
 }
 

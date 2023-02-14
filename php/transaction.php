@@ -1,14 +1,14 @@
 <?php
+session_start();
 include("connection.php");
-$vehi_no=$_POST['vehi_no'];
+$vehi_no=$_SESSION['vehi_no'];
+$type=$_SESSION['type'];
 $time=$_POST['time'];
 $date=$_POST['date'];
 $amount=$_POST['amount'];
 $sql="SELECT * FROM  vehicles where vehi_no='$vehi_no'";
 $query=mysqli_query($conn,$sql);
-$result=mysqli_num_rows($query);
-$row=mysqli_fetch_assoc($query);
-if($row['type']='pre')
+if($type=='pre')
 {
     $sql1="UPDATE vehicles SET status='OUT' WHERE vehi_no='$vehi_no'";
     $sql2="UPDATE pre_lot SET vehi_no='',lot_status='OUT' WHERE vehi_no='$vehi_no'";
@@ -26,7 +26,7 @@ if($row['type']='pre')
         echo"not updated";
     }
 }
-else
+elseif($type=='lot')
 {
     $sql3="UPDATE vehicles SET vehi_no='',status='OUT' WHERE vehi_no='$vehi_no'";
     $sql4="UPDATE lots SET vehi_no='',lot_status='OUT' WHERE vehi_no='$vehi_no'";
@@ -42,5 +42,9 @@ else
     {
         echo"not updated";
     }
+    }
+    else
+    {
+
     }
 ?>
