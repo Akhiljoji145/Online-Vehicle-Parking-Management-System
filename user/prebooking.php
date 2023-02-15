@@ -36,7 +36,7 @@ echo"<html>
    .submit
    {
    height:20px;
-   width:300px;
+   width:320px;
    }
 
     </style>   
@@ -75,12 +75,12 @@ echo"<html>
         <td><input type="text" name="phno" required></td>
         </tr>
         <tr>
-        <th><span>Time of arrival:<span></th>
-        <td><input type="time" name="time" required></td>
+        <th><span>date of arrival:<span></th>
+        <td><input type="date" name="date" required></td>
         </tr>
         <tr>
-        <th><span>Date of arrival:</span></th>
-        <td><input type="date" name="date" required></td>
+        <th><span>time of arrival:<span></th>
+        <td><input type="time" name="time" required></td>
         </tr>
         <tr>
         <td colspan="2"><input class="submit" type="submit" name="submit"></td>

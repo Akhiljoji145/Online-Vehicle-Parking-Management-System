@@ -6,8 +6,9 @@ $vehi_type=$_POST['vehi_type'];
 $vehi_no=$_SESSION['vehi_no'];
 $lot_no=$_POST['lot_code'];
 $phno=$_POST['phno'];
-$arrtim=$_POST['time'];
-$sql="INSERT INTO `vehicles` VALUES ('','$vehi_name','$vehi_type','$vehi_no','$lot_no','$phno','$arrtim','IN','pre')";
+$time=$_POST['time'];
+$date=$_POST['date'];
+$sql="INSERT INTO `vehicles` VALUES ('','$vehi_name','$vehi_type','$vehi_no','$lot_no','$phno','$date','$time','IN','pre')";
 $query=mysqli_query($conn,$sql);
 if($query==TRUE)
 {
