@@ -1,21 +1,24 @@
 <?php
 session_start();
-include('../php/connection.php');
 error_reporting(0);
+include('../php/connection.php');
 if (strlen($_SESSION['email']==0 && $_SESSION['user_id']==0 && $_SESSION['vehi_no']==0)) {
-    header('location:../user/siginform.php');
+    header('location:../home.html');
 } 
-else{ 
+else
+{ 
 $id=$_SESSION['user_id'];
 $vehi_no=$_SESSION['vehi_no'];
 $sql="SELECT users.username,users.vehi_no,vehicles.* FROM  users,vehicles WHERE vehicles.status='IN' AND vehicles.vehi_no='$vehi_no' AND users.vehi_no=vehicles.vehi_no ";
 $result=mysqli_query($conn,$sql);
-$row = mysqli_fetch_row($result);
-if($row['vehicle.time']>7200)
-{
-    include("unbook.php");
-}
-elseif($result==TRUE)
+$SQL="SELECT CURRENT_TIME,vehicles.arr_time from vehicles";
+$QUERY=mysqli_query($conn,$SQL);
+$row1=mysqli_fetch_assoc($QUERY);
+$TIME1=strtotime($row1['CURRENT_TIME']);
+$TIME2=strtotime($row1['arr_time']);
+$re=$TIME1-$TIME2;
+
+if($re<=7200)
 {
 echo"
 <html>
@@ -55,29 +58,34 @@ td
 <th>date of arr</th>
 <th>status</th>
 <th>unbook</th>
-
-</tr>
-<tr>
+</tr>";
+while($row=mysqli_fetch_row($result))
+{
+echo"<tr>
     <td>$row[0]</td>
-    
     <td>$row[3]</td>
     <td>$row[4]</td>
     <td>$row[5]</td>
     <td>$row[6]</td>
-
     <td>$row[7]</td>
     <td>$row[8]</td>
     <td>$row[9]</td>
     <td>$row[10]</td>
     <td><a href='unbook.php'>unbook</a></td>
-    </tr>
-    </table>
+    </tr>";
+}
+echo"
+</table>
 </body>
 </html>";
 }
-else {
-echo"NO VEHICLES";
+elseif($re>=7200) 
+{
+include("unbook.php");
+}
+else
+{
+    echo'<script>alert("no vehicles")</script>';
 }
 }
-
 ?>
