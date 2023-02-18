@@ -34,7 +34,8 @@ echo"<html>
    {
     color:white;
    }
-    </style>   
+    </style>
+    
     </head>
     <body>
         <form action='../php/addvehiclecheck.php' method='POST'>
@@ -84,7 +85,7 @@ echo"<html>
         <td><input type="date" name="date" required></td>
         </tr>
         <tr>
-        <td colspan="2"><input class="submit" type="submit" name="submit"></td>
+        <td colspan="2"><input class="submit" type="submit" name="submit" onclick="return validateForm()"></td>
         </tr>
     </form>
    

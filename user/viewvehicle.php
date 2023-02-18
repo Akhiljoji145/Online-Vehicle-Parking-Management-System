@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+error_reporting(0);
 include('../php/connection.php');
 if (strlen($_SESSION['email']==0 && $_SESSION['user_id']==0 && $_SESSION['vehi_no']==0)) {
     header('location:../home.html');
@@ -18,8 +18,7 @@ $TIME1=strtotime($row1['CURRENT_TIME']);
 $TIME2=strtotime($row1['arr_time']);
 $confirm=$row1['confirm'];
 $re=$TIME1-$TIME2;
-echo $re;
-echo $confirm;
+
 if($re <= 7200 OR $re >= -7200)
 {
 
@@ -46,9 +45,32 @@ td
     background-color:white;
     color:black;
 }
+form button
+{
+    margin-top:10%;
+    height:30px;
+    width:300px;
+    border-radius:15px;
+    margin-left:25%;
+    background-color:black;
+    color:white;
+    font-size:18px;
+}
+form button:hover
+{
+    background-color:green;
+}
+marquee
+{
+    background-color:green;
+    color:white;
+    font-size:20px;
+    height:30px;
+}
 </style>
 </head>
 <body>
+<marquee>If You Car Is Parked In Lot Then You Must Confirm It By Clicking The Confirm To Confirm It....</marquee>
 <table border='1' align='center'>
 <tr class='border'>
 <th>username</th>
