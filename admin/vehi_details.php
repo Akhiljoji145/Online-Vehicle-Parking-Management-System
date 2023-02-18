@@ -56,7 +56,7 @@ echo"<tr>
 <td>$row[6]</td>
 <td>$row[7]</td>
 <td>$row[8]</td>
-<td><a href='transactionDetails.html'><button>view</button></td></a>
+<td><a href='Transaction.php'><button>Pay</button></td></a>
 </tr>";
 $_SESSION['vehi_no'] = $row[3];
 $_SESSION['type']=$row[8];

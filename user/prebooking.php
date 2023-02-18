@@ -79,10 +79,6 @@ echo"<html>
         <td><input type="date" name="date" required></td>
         </tr>
         <tr>
-        <th><span>time of arrival:<span></th>
-        <td><input type="time" name="time" required></td>
-        </tr>
-        <tr>
         <td colspan="2"><input class="submit" type="submit" name="submit"></td>
         </tr>
     </form>
