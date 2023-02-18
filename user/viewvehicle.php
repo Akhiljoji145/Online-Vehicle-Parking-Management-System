@@ -11,7 +11,7 @@ $id=$_SESSION['user_id'];
 $vehi_no=$_SESSION['vehi_no'];
 $sql="SELECT users.username,users.vehi_no,vehicles.* FROM  users,vehicles WHERE vehicles.status='IN' AND vehicles.vehi_no='$vehi_no' AND users.vehi_no=vehicles.vehi_no ";
 $result=mysqli_query($conn,$sql);
-$SQL="SELECT CURRENT_TIME,vehicles.arr_time,vehicles.confirm from vehicles";
+$SQL="SELECT CURRENT_TIME,vehicles.arr_time,vehicles.confirm FROM vehicles WHERE vehi_no='$vehi_no'";
 $QUERY=mysqli_query($conn,$SQL);
 $row1=mysqli_fetch_assoc($QUERY);
 $TIME1=strtotime($row1['CURRENT_TIME']);
@@ -19,8 +19,10 @@ $TIME2=strtotime($row1['arr_time']);
 $confirm=$row1['confirm'];
 $re=$TIME1-$TIME2;
 echo $re;
-if($re <= 7200 OR $re >= -7200 AND $confirm=='YES')
+echo $confirm;
+if($re <= 7200 OR $re >= -7200)
 {
+
 echo"
 <html>
 <head>
@@ -82,10 +84,14 @@ echo"
 </form>
 </body>
 </html>";
-}
-elseif($re >= 7200 OR $re <= -7200 AND $confirm == 'NO') 
+if($confirm=='NO')
 {
-include("unbook.php");
+    include("unbook.php");
+}
+else
+{
+
+}
 }
 else
 {
