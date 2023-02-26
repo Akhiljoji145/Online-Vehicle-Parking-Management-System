@@ -77,9 +77,6 @@ echo"<html>
         <td><input type="text" name="phno" required></td>
         </tr>
         <tr>
-        <th><span>Time of arrival:<span></th>
-        <td><input type="time" name="time" required></td>
-        </tr>
         <tr>
         <th><span>Date of arrival:</span></th>
         <td><input type="date" name="date" required></td>

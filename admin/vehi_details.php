@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('../php/connection.php');
-$sql="SELECT * FROM vehicles WHERE status='IN'";
+$sql="SELECT * FROM vehicles WHERE status='IN' AND confirm='YES'";
 $query=mysqli_query($conn,$sql);
 $result=mysqli_num_rows($query);
 if($result > 0)

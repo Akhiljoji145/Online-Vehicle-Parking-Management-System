@@ -1,12 +1,7 @@
 <?php
 session_start();
 error_reporting(0);
-include('../php/connection.php');
-if (strlen($_SESSION['email']==0 && $_SESSION['user_id']==0 && $_SESSION['vehi_no']==0)) {
-    header('location:../home.html');
-} 
-else
-{ 
+include('../php/connection.php'); 
 $id=$_SESSION['user_id'];
 $vehi_no=$_SESSION['vehi_no'];
 $sql="SELECT users.username,users.vehi_no,vehicles.* FROM  users,vehicles WHERE vehicles.status='IN' AND vehicles.vehi_no='$vehi_no' AND users.vehi_no=vehicles.vehi_no ";
@@ -18,10 +13,23 @@ $TIME1=strtotime($row1['CURRENT_TIME']);
 $TIME2=strtotime($row1['arr_time']);
 $confirm=$row1['confirm'];
 $re=$TIME1-$TIME2;
+echo $re;
+echo $confirm;
+if($re >= 7200 OR $re <= -7200)
+{
+    if($confirm=='NO')
+    {
+    include("unbook.php");
+    }
+    else
+    {
 
-if($re <= 7200 OR $re >= -7200)
+    }
+}
+else
 {
 
+}
 echo"
 <html>
 <head>
@@ -70,7 +78,6 @@ marquee
 </style>
 </head>
 <body>
-<marquee>If You Car Is Parked In Lot Then You Must Confirm It By Clicking The Confirm To Confirm It....</marquee>
 <table border='1' align='center'>
 <tr class='border'>
 <th>username</th>
@@ -95,9 +102,16 @@ echo"<tr>
     <td>$row[7]</td>
     <td>$row[8]</td>
     <td>$row[9]</td>
-    <td>$row[10]</td>
-    <td><a href='unbook1.php'>unbook</a></td>
+    <td>$row[10]</td>";
+    if($confirm=='NO')
+    {
+    echo"<td><a href='unbook1.php'>unbook</a></td>
     </tr>";
+    }
+    else
+    {
+        echo"<td></td>";
+    }
 }
 echo"
 </table>
@@ -106,18 +120,4 @@ echo"
 </form>
 </body>
 </html>";
-if($confirm=='NO')
-{
-    include("unbook.php");
-}
-else
-{
-
-}
-}
-else
-{
-    echo'<script>alert("no vehicles")</script>';
-}
-}
 ?>

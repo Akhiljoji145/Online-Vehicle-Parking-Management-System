@@ -9,7 +9,7 @@ $lot_no=$_POST['lot_code'];
 $phno=$_POST['phno'];
 $arrtim=$_POST['time'];
 $arrdate=$_POST['date'];
-$sql="INSERT INTO `vehicles` VALUES ('','$vehi_name','$vehi_type','$vehi_no','$lot_no','$phno','$arrtim','$arrdate','IN','lot','YES')";
+$sql="INSERT INTO `vehicles` VALUES ('','$vehi_name','$vehi_type','$vehi_no','$lot_no','$phno','$arrdate',CURRENT_TIME,'IN','lot','YES')";
 $query=mysqli_query($conn,$sql);
 if($query==TRUE)
 {

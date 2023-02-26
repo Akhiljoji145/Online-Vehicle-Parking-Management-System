@@ -53,6 +53,7 @@ echo"
         grid-area:link;
         border:1px solid black;
         width:100%;
+        
       }
       
       ul 
@@ -147,6 +148,12 @@ echo"
               text-decoration:underline;
               background-color: #1EA703;
             }
+            marquee
+            {
+              background-color:darkgreen;
+              font-size:24px;
+              color:white
+            }
             
 
      
@@ -165,6 +172,7 @@ echo"
         <li class='li'><a class='left' href='#contact'>Contact</a></li>
         <li class='li right'><a class='right' href='../php/logout.php'>logout</a></li>
       </ul>
+      <marquee>If You Car Is Parked In Lot Then You Must Confirm It By Clicking The Confirm To Confirm It....</marquee>
     </div>
 		<div class='menu'>
         <ul>
