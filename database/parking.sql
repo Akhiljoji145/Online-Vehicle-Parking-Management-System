@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 05, 2023 at 07:49 AM
+-- Generation Time: Feb 28, 2023 at 05:19 AM
 -- Server version: 10.4.27-MariaDB
--- PHP Version: 8.0.25
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -62,9 +62,12 @@ INSERT INTO `lots` (`lot_id`, `lot_code`, `vehi_no`, `lot_status`) VALUES
 (6, 'AS0002', '', 'OUT'),
 (7, 'AS0003', '', 'OUT'),
 (8, 'AS0004', '', 'OUT'),
-(9, 'AS0005', 'KL-05-W-1869', 'IN'),
+(9, 'AS0005', '', 'OUT'),
 (10, 'AS0006', '', 'OUT'),
-(11, 'AS0007', '', 'OUT');
+(11, 'AS0007', '', 'OUT'),
+(12, 'AS0008', '', 'OUT'),
+(13, 'AS0009', '', 'OUT'),
+(14, 'AS0010', '', 'OUT');
 
 -- --------------------------------------------------------
 
@@ -84,8 +87,12 @@ CREATE TABLE `pre_lot` (
 --
 
 INSERT INTO `pre_lot` (`lot_id`, `lot_code`, `vehi_no`, `lot_status`) VALUES
-(2, 'AS0008', 'KL-05-AD-1234', 'IN'),
-(3, 'AS0009', '', 'OUT');
+(4, 'PS0001', 'KL-05-W-1869', 'IN'),
+(5, 'PS0002', '', 'OUT'),
+(6, 'PS0003', '', 'OUT'),
+(7, 'PS0004', '', 'OUT'),
+(8, 'PS0005', '', 'OUT'),
+(9, 'PS0006', '', 'OUT');
 
 -- --------------------------------------------------------
 
@@ -107,7 +114,8 @@ CREATE TABLE `transaction` (
 --
 
 INSERT INTO `transaction` (`tran_id`, `vehicle_no`, `receipt_no`, `time`, `date_of_trans`, `amount`) VALUES
-(10, 'KL-05-AD-1234', '', '17:32:00', '2023-02-04', 200);
+(13, 'KL-03-W-1234', '', '09:15:00', '2023-02-28', 700),
+(14, 'KL-05-W-1869', '', '09:16:00', '2023-02-28', 500);
 
 -- --------------------------------------------------------
 
@@ -128,7 +136,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `age`, `email`, `vehi_no`) VALUES
-(10, 'manu ', 28, 'manu@gmail.com', 'KL-05-AD-1234');
+(11, 'akhil', 18, 'akhiljoji@gmail.com', 'KL-05-W-1869'),
+(12, 'ATHIRA', 18, 'athirajoji@gmail.com', 'KL-05-AW-1869');
 
 -- --------------------------------------------------------
 
@@ -143,20 +152,20 @@ CREATE TABLE `vehicles` (
   `vehi_no` varchar(50) DEFAULT NULL,
   `lot_no` varchar(50) DEFAULT NULL,
   `contact_no` varchar(50) DEFAULT NULL,
-  `time_arr` time DEFAULT NULL,
   `date_arr` date DEFAULT NULL,
+  `arr_time` time NOT NULL,
   `status` varchar(50) NOT NULL,
-  `type` varchar(50) NOT NULL
+  `type` varchar(50) NOT NULL,
+  `confirm` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `vehicles`
 --
 
-INSERT INTO `vehicles` (`vehi_id`, `vehi_name`, `vehi_type`, `vehi_no`, `lot_no`, `contact_no`, `time_arr`, `date_arr`, `status`, `type`) VALUES
-(22, 'Hero Splender', 'twowheeler', 'KL-05-W-1869', 'AS0005', '9497343468', '22:10:00', '2023-01-18', 'IN', 'lot'),
-(24, 'honda amaze', 'fourwheeler', '', 'AS0008', '7356885119', '18:10:00', '2023-02-04', 'OUT', 'pre'),
-(31, 'honda amaze', 'fourwheeler', 'KL-05-AD-1234', 'AS0008', '7356885119', '10:45:00', '2023-02-05', 'IN', 'pre');
+INSERT INTO `vehicles` (`vehi_id`, `vehi_name`, `vehi_type`, `vehi_no`, `lot_no`, `contact_no`, `date_arr`, `arr_time`, `status`, `type`, `confirm`) VALUES
+(33, 'HONDA SHINE', 'twowheeler', 'KL-05-W-1869', 'PS0001', '9497343468', '2023-02-26', '08:27:30', 'OUT', 'pre', 'YES'),
+(38, 'HONDA SHINE', 'twowheeler', 'KL-05-W-1869', 'PS0001', '7356885119', '2023-02-28', '09:17:20', 'IN', 'pre', 'NO');
 
 --
 -- Indexes for dumped tables
@@ -206,31 +215,31 @@ ALTER TABLE `vehicles`
 -- AUTO_INCREMENT for table `lots`
 --
 ALTER TABLE `lots`
-  MODIFY `lot_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `lot_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `pre_lot`
 --
 ALTER TABLE `pre_lot`
-  MODIFY `lot_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `lot_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
-  MODIFY `tran_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `tran_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `vehicles`
 --
 ALTER TABLE `vehicles`
-  MODIFY `vehi_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `vehi_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
