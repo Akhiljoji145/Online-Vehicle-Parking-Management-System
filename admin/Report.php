@@ -91,7 +91,7 @@
                 
                 </style>
                 </head>
-                <table border='1'>
+                <table border='1' align='center'>
                 <tr>
                 <th>transactionid</th>
                 <th>vehicle no</th>
@@ -125,5 +125,6 @@
         }
         ?>
         </div>
+       
 </body>
 </html>

@@ -35,10 +35,37 @@ echo"<html>
     color:white;
    }
     </style>
+    <script>
+function validateForm() {
+  // Get the form inputs
+  var vehiName = document.forms['myForm']['vehi_name'].value;
+  var vehiType = document.forms['myForm']['vehi_type'].value;
+  var vehiNo = document.forms['myForm']['vehi_no'].value;
+  var lotCode = document.forms['myForm']['lot_code'].value;
+  var phNo = document.forms['myForm']['phno'].value;
+  var date = document.forms['myForm']['date'].value;
+  
+  // Check if any field is empty
+  if (vehiName == '' || vehiType == 'select one' || vehiNo == '' || lotCode == '' || phNo == '' || date == '') {
+    alert('All fields must be filled out');
+    return false;
+  }
+  
+  // Check if phone number is valid
+  if (!/^[0-9]{10}$/.test(phNo)) {
+    alert('Invalid phone number');
+    return false;
+  }
+  
+  // If everything is fine, submit the form
+  return true;
+}
+</script>
+
     
     </head>
     <body>
-        <form action='../php/addvehiclecheck.php' method='POST'>
+        <form name='myForm' action='../php/addvehiclecheck.php' method='POST'>
         <table align='center' border='0' height='400px' width='400px'>
         <tr>
         <th><span>vehicle name:<span></th>
