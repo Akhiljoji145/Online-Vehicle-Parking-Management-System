@@ -28,6 +28,7 @@ if(isset($_POST['submit']))
         }
         else
         {
+          echo'<script>alert("vehicle not found") ; window.location.href="../home.html"</script>';
 
         }
     }

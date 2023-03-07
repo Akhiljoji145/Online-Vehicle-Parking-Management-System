@@ -5,6 +5,4 @@ function validate() {
     alert("Vehicle number cannot be empty");
     return false;
   }
-
-  return true;
 }
