@@ -5,14 +5,26 @@ $result=mysqli_query($conn,$query);
 echo"<html>
 <head>
 <style>
+table
+{
+	border:1px solid black;
+	border-collapse:collapse;
+}
+th
+{
+	background-color:black;
+	color:white;
+	border-right:1px solid white;
+}
 td
 {
-   border:0;
+   border-left:1px solid black;
+   background-color:white;
 }
 </style>
 </head>
 <body>
-<table border='1'>
+<table align='center'>
 <tr>
 <th>user id</th>
 <th>username</th>
